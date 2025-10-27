@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Akanksha — Happy Birthday 🎨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#ffb6d5;
+      --dark-red:#8b0000;
+      --brown:#5d4037;
+      --black:#0b0b0b;
+      --white:#ffffff;
+      --green:#2e8b57;
+      --blue:#3b82f6;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Arial;}
+
+    body{
+      background: radial-gradient(circle at 10% 20%, rgba(255,182,193,0.12), transparent 8%),
+                  linear-gradient(135deg, #0b0b0b 0%, #2b1a19 40%, #04263a 100%);
+      color:var(--white);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    header{padding:36px 20px 10px; text-align:center; position:relative}
+    .logo{font-weight:800;font-size:1.2rem;letter-spacing:0.4px}
+    h1{
+      margin:6px 0 0;font-size:2.6rem;line-height:1.02;color:var(--pink);
+      text-shadow: 0 6px 30px rgba(0,0,0,0.6);
+    }
+    .subtitle{color:rgba(255,255,255,0.8);margin-top:6px;font-size:1rem}
+
+    main{max-width:980px;margin:28px auto;padding:24px}
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.06));
+      border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,0.6);position:relative;overflow:hidden
+    }
+
+    .left{
+      display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:center
+    }
+
+    .portrait{
+      width:150px;height:150px;border-radius:18px;overflow:hidden;flex:0 0 150px;border:4px solid rgba(255,255,255,0.06);
+      box-shadow:0 6px 20px rgba(0,0,0,0.6);background:linear-gradient(135deg,var(--pink),var(--blue));
+      display:flex;align-items:center;justify-content:center;font-size:48px
+    }
+
+    .intro{
+      flex:1;min-width:230px;text-align:left;color:var(--white)
+    }
+    .name{font-weight:800;font-size:1.6rem;color:var(--pink);}
+    .epithet{color:var(--white);opacity:0.95;margin-top:8px}
+
+    .message{
+      margin-top:18px;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.92);
+    }
+    .message p{margin:0}
+
+    .poem{font-style:italic;margin-top:18px;font-size:1.02rem;color:#fff8f9}
+
+    .photos{
+      display:flex;gap:16px;margin-top:22px;justify-content:center;flex-wrap:wrap
+    }
+    .photo{
+      width:260px;height:180px;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.6);border:3px solid rgba(255,255,255,0.03);
+      transform:translateY(0);transition:transform .6s cubic-bezier(.2,.9,.3,1),box-shadow .3s;cursor:pointer;background:#111
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .photo:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.7)}
+
+    .controls{display:flex;gap:10px;justify-content:center;margin-top:18px}
+    .btn{padding:8px 14px;border-radius:999px;border:0;background:linear-gradient(90deg,var(--pink),var(--blue));font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+
+    footer{margin-top:28px;text-align:center;color:rgba(255,255,255,0.6);font-size:0.92rem}
+
+    .floaters{position:fixed;left:0;right:0;top:0;bottom:0;pointer-events:none;overflow:hidden}
+    .floater{position:absolute;font-size:34px;opacity:0.95;transform:translateY(-10vh);animation:floatUp linear infinite}
+    @keyframes floatUp{ from{transform:translateY(110vh) rotate(0deg)} to{transform:translateY(-20vh) rotate(360deg)} }
+
+    #confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:3}
+
+    @media (max-width:720px){ .photo{width:92%;height:160px} h1{font-size:2rem} }
+  </style>
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <div class="floaters" aria-hidden>
+    <div class="floater" style="left:6%;font-size:46px;animation-duration:18s;">🌷</div>
+    <div class="floater" style="left:22%;font-size:54px;animation-duration:20s;">🌹</div>
+    <div class="floater" style="left:38%;font-size:44px;animation-duration:16s;">🌻</div>
+    <div class="floater" style="left:54%;font-size:48px;animation-duration:19s;">🌷</div>
+    <div class="floater" style="left:70%;font-size:52px;animation-duration:22s;">🌹</div>
+    <div class="floater" style="left:86%;font-size:42px;animation-duration:17s;">🌻</div>
+  </div>
+
+  <header>
+    <div class="logo">A Surprise From The Heart</div>
+    <h1>“The Sketch on the Bus” — For Akanksha 🎨✨</h1>
+    <div class="subtitle">Happy Birthday, Akanksha Yadav (Ras malai)</div>
+  </header>
+
+  <main>
+    <section class="card" role="region" aria-label="birthday card">
+      <div class="left">
+        <div class="portrait" id="portrait">AY</div>
+        <div class="intro">
+          <div class="name">Akanksha Yadav — Ras malai</div>
+          <div class="epithet">Muse • Artist • The Sketch That Made Me Whole</div>
+
+          <div class="message" id="messageBox">
+            <div class="poem" id="poem"></div>
+          </div>
+
+          <div class="controls">
+            <button class="btn" id="replayBtn">Replay Revelations</button>
+            <button class="btn" id="toggleMusic">Pause Music</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="photos" id="photos">
+        <div class="photo"><img src="photo1.jpg" alt="Memory 1"></div>
+        <div class="photo"><img src="photo2.jpg" alt="Memory 2"></div>
+        <div class="photo"><img src="photo3.jpg" alt="Memory 3"></div>
+        <div class="photo"><img src="photo4.jpg" alt="Memory 4"></div>
+        <div class="photo"><img src="photo5.jpg" alt="Memory 5"></div>
+      </div>
+
+      <footer>
+        Made with 💕 — Happy Birthday, my Ras malai.
+      </footer>
+    </section>
+  </main>
+
+  <audio id="bgm" src="wanna_be_yours.MP3" loop preload="auto"></audio>
+
+  <script>
+    const poemText = `The city blurred through drops of rain,
+\nA quiet bus, a gentle chain.
+\nI sat alone, my sketchbook near,
+\nLost in lines the world won’t hear.
+\n
+\nThen came a voice, soft as a breeze,
+\n“Do you draw faces just like these?”
+\nI turned to see your eyes so bright,
+\nLike dawn had broken through the night.
+\n
+\nYou laughed, and time forgot to run,
+\nThe rain, the crowd — they blurred as one.
+
+\nWe spoke of dreams, of art, of skies,
+\nBut I was tracing you with my eyes.
+\n
+\nThat moment stayed, when you stepped away,
+\nLike a painting I could never convey.
+\nSince then, each page my pencil knew,
+\nFound its way back home — to you.
+\n
+\nNow every hue my heart has known,
+\nYou’ve turned to shades I call my own.
+\nAkanksha — muse of my art and soul,
+\nYou’re the sketch that made me whole.
+\nI wish you all the happiness in the world. Happy Birthday, my Ras malai 💕.`;
+
+    const poemEl = document.getElementById('poem');
+    let idx = 0;
+    let typingInterval;
+
+    function startTypewriter(){
+      poemEl.textContent = '';
+      idx = 0;
+      clearInterval(typingInterval);
+      typingInterval = setInterval(()=>{
+        const ch = poemText[idx++] || '';
+        poemEl.textContent += ch;
+        if(idx >= poemText.length){ clearInterval(typingInterval); startConfetti(); }
+      }, 24);
+    }
+
+    const confettiCanvas = document.getElementById('confetti');
+    const ctx = confettiCanvas.getContext('2d');
+    let W = confettiCanvas.width = window.innerWidth;
+    let H = confettiCanvas.height = window.innerHeight;
+
+    window.addEventListener('resize', ()=>{ W = confettiCanvas.width = window.innerWidth; H = confettiCanvas.height = window.innerHeight; })
+
+    const confettiPieces = [];
+    function makeConfetti(){
+      const colors = ["#ffb6d5","#8b0000","#5d4037","#ffffff","#2e8b57","#3b82f6"];
+      for(let i=0;i<120;i++){
+        confettiPieces.push({ x: Math.random()*W, y: Math.random()*-H, r: 6+Math.random()*9, d: Math.random()*30+10, color: colors[Math.floor(Math.random()*colors.length)], tilt: Math.random()*10, tiltSpeed: Math.random()*0.1+0.02 });
+      }
+    }
+    function drawConfetti(){
+      ctx.clearRect(0,0,W,H);
+      for(let p of confettiPieces){
+        p.tilt += p.tiltSpeed;
+        p.y += Math.sin(p.tilt) + 1 + p.r/8;
+        p.x += Math.cos(p.tilt/2);
+        if(p.y > H + 20) { p.y = -20; p.x = Math.random()*W; }
+        ctx.save(); ctx.beginPath(); ctx.translate(p.x,p.y); ctx.rotate(p.tilt*0.08);
+        ctx.fillStyle = p.color; ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.6); ctx.restore();
+      }
+    }
+    let confettiAnim;
+    function startConfetti(){ if(confettiPieces.length===0) makeConfetti(); cancelAnimationFrame(confettiAnim); function loop(){ drawConfetti(); confettiAnim = requestAnimationFrame(loop);} loop(); }
+    function stopConfetti(){ cancelAnimationFrame(confettiAnim); ctx.clearRect(0,0,W,H); confettiPieces.length=0; }
+
+    document.querySelectorAll('.floater').forEach(el=>{
+      el.style.opacity = 0.9 - Math.random()*0.3;
+      el.style.animationDelay = (Math.random()*6)+'s';
+    });
+
+    const bgm = document.getElementById('bgm');
+    const toggleMusic = document.getElementById('toggleMusic');
+    let isPlaying = false;
+    function tryAutoPlay(){
+      bgm.volume = 0.18;
+      bgm.play().then(()=>{ isPlaying=true; toggleMusic.textContent='Pause Music'; }).catch(()=>{ isPlaying=false; toggleMusic.textContent='Play Music'; });
+    }
+    toggleMusic.addEventListener('click', ()=>{
+      if(isPlaying){ bgm.pause(); isPlaying=false; toggleMusic.textContent='Play Music'; } else { bgm.play(); isPlaying=true; toggleMusic.textContent='Pause Music'; }
+    });
+
+    document.getElementById('replayBtn').addEventListener('click', ()=>{
+      stopConfetti(); startTypewriter(); tryAutoPlay();
+    })
+
+    startTypewriter(); tryAutoPlay();
+
+    document.querySelectorAll('.photo img').forEach(img=>{
+      img.addEventListener('click', ()=>{
+        const src = img.src;
+        const w = window.open('', '_blank');
+        w.document.write(`<img src="${src}" style="max-width:100%;height:auto;display:block;margin:40px auto;background:#000;padding:20px;border-radius:8px">`);
+      })
+    })
+
+    window.addEventListener('keydown', (e)=>{ if(e.code==='Space'){ e.preventDefault(); toggleMusic.click(); } });
+
+  </script>
+</body>
+</html>
+
+ 
